@@ -43,12 +43,8 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE IMGUI_ENABLE_FREETYPE)
 include(config/imgui_config.cmake)
 
 # copy imgui.h to include directory
-add_custom_command(
-    TARGET ${PROJECT_NAME}
-    POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy
-            ${imgui_SOURCE_DIR}/imgui.h
-            ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui.h
-)
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include)
+file(COPY_FILE ${imgui_SOURCE_DIR}/imgui.h ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui.h)
+file(COPY_FILE ${imgui_SOURCE_DIR}/imconfig.h ${CMAKE_CURRENT_SOURCE_DIR}/include/imconfig.h)
 
 target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
