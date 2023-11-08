@@ -35,6 +35,7 @@ FILE(GLOB IMGUI_SOURCES ${imgui_SOURCE_DIR}/*.cpp)
 FILE(GLOB IMGUI_HEADERS ${imgui_SOURCE_DIR}/*.h)
 
 add_library(${PROJECT_NAME} STATIC ${IMGUI_SOURCES} ${IMGUI_HEADERS})
+add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${freetype_SOURCE_DIR}/include)
 target_link_libraries(${PROJECT_NAME} PRIVATE freetype)
