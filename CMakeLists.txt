@@ -51,12 +51,12 @@ endforeach()
 set(IMGUI_BACKEND_SOURCES ${filtered_list})
 
 # copy imgui.h to include directory
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include)
-file(COPY_FILE ${imgui_SOURCE_DIR}/imgui.h ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui.h)
-file(COPY_FILE ${imgui_SOURCE_DIR}/imconfig.h ${CMAKE_CURRENT_SOURCE_DIR}/include/imconfig.h)
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui)
+file(COPY_FILE ${imgui_SOURCE_DIR}/imgui.h ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui/imgui.h)
+file(COPY_FILE ${imgui_SOURCE_DIR}/imconfig.h ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui/imconfig.h)
 foreach(file ${IMGUI_BACKEND_SOURCES})
     get_filename_component(filename ${file} NAME)
-    file(COPY_FILE ${file} ${CMAKE_CURRENT_SOURCE_DIR}/include/${filename})
+    file(COPY_FILE ${file} ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui/${filename})
 endforeach()
 
 target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
