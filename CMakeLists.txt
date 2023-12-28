@@ -34,6 +34,9 @@ file(COPY ${IMGUI_EXTRA_FILES} DESTINATION ${imgui_SOURCE_DIR})
 FILE(GLOB IMGUI_SOURCES ${imgui_SOURCE_DIR}/*.cpp)
 FILE(GLOB IMGUI_HEADERS ${imgui_SOURCE_DIR}/*.h)
 
+message(STATUS "Selected ImGui sources: ${IMGUI_SOURCES}")
+message(STATUS "Selected ImGui headers: ${IMGUI_HEADERS}")
+
 add_library(${PROJECT_NAME} STATIC ${IMGUI_SOURCES} ${IMGUI_HEADERS})
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
@@ -54,6 +57,7 @@ set(IMGUI_BACKEND_SOURCES ${filtered_list})
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui)
 file(COPY_FILE ${imgui_SOURCE_DIR}/imgui.h ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui/imgui.h)
 file(COPY_FILE ${imgui_SOURCE_DIR}/imconfig.h ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui/imconfig.h)
+file(COPY_FILE ${imgui_SOURCE_DIR}/imgui_stdlib.h ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui/imgui_stdlib.h)
 foreach(file ${IMGUI_BACKEND_SOURCES})
     get_filename_component(filename ${file} NAME)
     file(COPY_FILE ${file} ${CMAKE_CURRENT_SOURCE_DIR}/include/imgui/${filename})
