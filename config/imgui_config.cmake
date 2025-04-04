@@ -31,7 +31,7 @@ if (IMGUI_DISABLE_WIN32_FUNCTIONS)
 endif()
 
 if (IMGUI_ENABLE_FREETYPE_LUNASVG)
-    CPMAddPackage("gh:sammycage/lunasvg#17b595a")
+    CPMAddPackage("gh:sammycage/lunasvg#12687e98fb9aa7c697316068a898130a07f9273b")
     target_link_libraries(${PROJECT_NAME} PRIVATE lunasvg)
     target_compile_definitions(${PROJECT_NAME} PUBLIC IMGUI_ENABLE_FREETYPE_LUNASVG)
 endif()

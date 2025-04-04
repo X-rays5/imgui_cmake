@@ -5,13 +5,13 @@ set(CMAKE_CXX_STANDARD 17)
 
 include(get_cpm.cmake)
 
-CPMAddPackage("gh:freetype/freetype#b1f47850878d232eea372ab167e760ccac4c4e32")
+CPMAddPackage("gh:freetype/freetype#82090e67c24259c343c83fd9cefe6ff0be7a7eca")
 
 option(IMGUI_DOCKING_BRANCH "Branch of imgui_docking" OFF)
 if (IMGUI_DOCKING_BRANCH)
-    set(IMGUI_GIT_TAG "8679cfa2d88ca8c11b96706272d73f3f567b1bb9") # docking
+    set(IMGUI_GIT_TAG "9fdeb41e52cd4271601b85fadf7d36a62c6ed09e") # docking
 else ()
-    set(IMGUI_GIT_TAG "3b2f2602b4d6ecb0d7c09865dccbf8036afc002a") # master
+    set(IMGUI_GIT_TAG "b4bd596a393f09eb39c8fa9cf1b4430dbe6272b0") # master
 endif ()
 
 CPMAddPackage(
