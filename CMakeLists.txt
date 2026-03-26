@@ -9,9 +9,9 @@ CPMAddPackage("gh:freetype/freetype#82090e67c24259c343c83fd9cefe6ff0be7a7eca")
 
 option(IMGUI_DOCKING_BRANCH "Branch of imgui_docking" OFF)
 if (IMGUI_DOCKING_BRANCH)
-    set(IMGUI_GIT_TAG "9fdeb41e52cd4271601b85fadf7d36a62c6ed09e") # docking
+    set(IMGUI_GIT_TAG "2a1b69f05748ad909f03acf4533447cac1331611") # docking
 else ()
-    set(IMGUI_GIT_TAG "b4bd596a393f09eb39c8fa9cf1b4430dbe6272b0") # master
+    set(IMGUI_GIT_TAG "6ded5230d043aa32c755e65c910c2af5002fb9f9") # master
 endif ()
 
 CPMAddPackage(
