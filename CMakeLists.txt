@@ -44,6 +44,10 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${freetype_SOURCE_DIR}/includ
 target_link_libraries(${PROJECT_NAME} PRIVATE freetype)
 target_compile_definitions(${PROJECT_NAME} PRIVATE IMGUI_ENABLE_FREETYPE)
 
+if (ENABLE_DX12_BACKEND)
+    target_link_libraries(${PROJECT_NAME} PRIVATE dxgi)
+endif()
+
 include(config/imgui_config.cmake)
 
 foreach(file ${IMGUI_BACKEND_SOURCES})
